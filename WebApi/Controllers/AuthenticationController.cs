@@ -16,6 +16,7 @@ using WebApi.Extensions;
 using DtoModels.Dto;
 using DtoModels.Response;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApi.Controllers
 {
@@ -130,6 +131,7 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         [Route("{id}")]
         public async Task<IActionResult> GetUserProfile(string id)
         {
