@@ -26,6 +26,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.NewtonsoftJson" Version="5.0.11" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,6 +35,8 @@
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
     <None Remove="Microsoft.EntityFrameworkCore.Design" />
     <None Remove="Extensions\" />
+    <None Remove="Hubs\" />
+    <None Remove="Microsoft.AspNetCore.SignalR.Protocols.NewtonsoftJson" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
+    <Folder Include="Hubs\" />
   </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->

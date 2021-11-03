@@ -1,0 +1,16 @@
+.room-container {
+    border-radius: 0 !important;
+    padding: 0 !important;
+    width: 400px;
+    opacity: 0.9;
+
+    .custom-toolbar {
+        // height: 40px;
+        background: none !important;
+        border-bottom: 1px solid lightgray;
+    }
+
+    .form-container {
+        padding: 16px;
+    }
+}

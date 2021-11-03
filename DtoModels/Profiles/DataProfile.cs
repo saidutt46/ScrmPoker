@@ -2,6 +2,7 @@
 using AutoMapper;
 using Domain.Entities;
 using DtoModels.Dto;
+using DtoModels.Requests;
 
 namespace DtoModels.Profiles
 {
@@ -10,6 +11,7 @@ namespace DtoModels.Profiles
         public DataProfile()
         {
             CreateMap<ApplicationUser, UserProfileDto>();
+            CreateMap<CreateRoomRequest, Room>();
         }
     }
 }

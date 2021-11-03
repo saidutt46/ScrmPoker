@@ -2,8 +2,6 @@ export class UserProfileModel {
     id: string;
     userName: string;
     displayName: string;
-    connectionId: string;  
-    roomId: string;
+    connectionId: string;
     isHost: boolean;
-    currrentCardId: number;
 }

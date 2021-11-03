@@ -11,13 +11,17 @@ namespace Persistence.Context
     {
         public ScrumPokerContext(DbContextOptions<ScrumPokerContext> options) : base(options)
         {
+
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
             builder.Entity<ApplicationUser>().Property(p => p.DisplayName).IsRequired();
+            builder.Entity<Room>().HasMany(s => s.Users);
         }
+
+        public DbSet<Room> Rooms { get; set; }
 
         public override int SaveChanges()
         {
