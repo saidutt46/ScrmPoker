@@ -12,6 +12,12 @@ export class BaseDtoResponse <T> {
   success: boolean;
 }
 
+export class BaseResponse {
+  id: string;
+  created: Date;
+  modified: Date;
+}
+
 export class AuthBaseResponse {
   success: boolean;
   status: string;

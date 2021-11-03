@@ -19,6 +19,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserState } from './state-management/user/user.state';
 import { environment } from 'src/environments/environment';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateRoomComponent } from './components/create-room/create-room.component';
+import { SessionComponent } from './components/session/session.component';
+import { RoomState } from './state-management/room/room.state';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    NavigationComponent
+    NavigationComponent,
+    CreateRoomComponent,
+    SessionComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,8 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     FormsModule,
     NgxsModule.forRoot([
-      UserState
+      UserState,
+      RoomState
     ], { developmentMode: !environment.production }),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsStoragePluginModule.forRoot({key: 'user'}),

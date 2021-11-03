@@ -8,10 +8,14 @@
     <None Remove="Shared\" />
     <None Remove="Context\" />
     <None Remove="Microsoft.EntityFrameworkCore.Design" />
+    <None Remove="Interfaces\" />
+    <None Remove="Repository\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Shared\" />
     <Folder Include="Context\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Repository\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />

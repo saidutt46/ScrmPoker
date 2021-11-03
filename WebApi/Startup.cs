@@ -5,6 +5,7 @@ using Autofac;
 using AutoMapper;
 using Domain.Entities;
 using DtoModels.Profiles;
+using Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -17,6 +18,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Persistence;
 using Persistence.Context;
 
 namespace WebApi
@@ -137,6 +139,13 @@ namespace WebApi
             });
             services.AddOptions();
 
+        }
+
+        public static void ConfigureContainer(ContainerBuilder builder)
+        {
+            // Register your own things directly with Autofac
+            builder.RegisterModule(new PersistenceAutofacModule());
+            builder.RegisterModule(new InfrastructureAutofacModule());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

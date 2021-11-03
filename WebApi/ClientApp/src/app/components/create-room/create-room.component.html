@@ -1,0 +1,22 @@
+<mat-card class="room-container mat-elevation-z10" fxFlex fxLayout="column">
+    <div fxFlex fxLayout="column">
+        <mat-toolbar class="custom-toolbar">Create Room</mat-toolbar>
+        <div class="form-container" fxFlex fxLayout="column" fxLayoutGap="16px">
+            <form [formGroup]="createRoomForm" fxLayout="column">
+                <mat-form-field>
+                    <input required id="name" matInput formControlName="name" placeholder="Name">
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input id="tagLine" matInput formControlName="tagLine" placeholder="Tag Line">
+                  </mat-form-field>
+            </form>
+            <mat-dialog-actions>
+                <button fxFlex color="primary" mat-flat-button (click)="createRoom()">CREATE</button>
+            </mat-dialog-actions>
+        </div>
+    </div>
+    <!-- <mat-divider></mat-divider>
+    <div fxFlex fxLayout="column">
+        Join Room SECTION
+    </div> -->
+</mat-card>
