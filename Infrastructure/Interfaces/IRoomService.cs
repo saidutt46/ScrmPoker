@@ -12,5 +12,6 @@ namespace Infrastructure.Interfaces
         Task<BaseDtoResponse<Room>> GetById(Guid id);
         Task<BaseDtoResponse<Room>> Add(CreateRoomRequest request);
         Task<BaseDtoResponse<Room>> Delete(Guid id);
+        Task<BaseDtoResponse<Room>> Update(Guid id, Room room);
     }
 }

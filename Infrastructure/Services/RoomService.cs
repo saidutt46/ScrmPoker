@@ -72,6 +72,33 @@ namespace Infrastructure.Services
             }
         }
 
+        public async Task<BaseDtoResponse<Room>> Update(Guid id, Room request)
+        {
+            try
+            {
+
+                Room room = await _roomRepository.GetById(id);
+                if (room != null)
+                {
+
+                    room.Name = request.Name;
+                    room.TagLine = request.TagLine;
+                    room.Users = request.Users;
+                    await _roomRepository.Update(room);
+                    Room updatedRoom = await _roomRepository.GetById(id);
+                    return new BaseDtoResponse<Room>(updatedRoom);
+                }
+                else
+                {
+                    return new BaseDtoResponse<Room>("Room with provided details not found");
+                }
+            }
+            catch (Exception ex)
+            {
+                return new BaseDtoResponse<Room>($"An error occurred when updating the room: {ex.Message}");
+            }
+        }
+
         public async Task<BaseDtoResponse<Room>> Delete(Guid id)
         {
             try
